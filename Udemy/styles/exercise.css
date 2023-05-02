@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+img {
+    width: 30%;
+    height: 600px;
+    margin: calc(10%/6);
+}
+
+nav {
+    font-family: 'Raleway', sans-serif;
+    border-bottom: 2px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+ul {
+    border: 1px solid red;
+    list-style-type: none;
+    max-width: 50%;
+    flex: 1;
+    justify-content: space-evenly;
+    display: flex;
+}
+.flex-container {
+    display: flex;
+    padding: 10px;
+    background-color: black;
+}
+
+.flex-start {
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.flex-item {
+    background-color: white;
+    padding: 10px;
+}
+
+/* 800이 최소 범위이고 이를 넘어가면 색이 변경된다*/
+@media (min-width: 800px){
+    nav {
+        color: purple;
+    }
+}
+@media (orientation: landscape){
+    body{
+        background-color: beige;
+    }
+    ul{
+        flex-direction: row;
+    }
+}

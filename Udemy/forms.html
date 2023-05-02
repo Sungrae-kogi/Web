@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*속성 선택자*/
+        form[action*="https:"]{
+            padding: 10px;
+        }
+        
+
+        div {
+            /*border style 지정시 보통 두께, 스타일, 색상순으로 정함 */
+            border: 1mm solid red;
+            border-left-style: solid;
+            border-left-color: blue;
+            border-left-width: 3mm;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Forms Demo</h1>
+
+    <div class="login_form">
+        <label for="username">ID:</label>
+        <input type="text" id="username">
+    </div>
+
+    <div class="lgoin_form">
+        <label for="password">PWD:</label>
+        <input type="password" id="password">
+    </div>
+
+    <hr>
+    <button>Not Inside Form</button>
+    <!-- 레딧 검색 폼-->
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+    </form>
+    <!-- 구글 검색 폼-->
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+
+    <div>
+        <input type="checkbox" id="scales" name="scales" checked>
+        <label for="scales">Scales</label>
+    </div>
+    <form>
+        <input type="checkbox" id="horns" name="hornes">
+        <label for="horns">Horns</label>
+        <p>
+            <!--radio는 name이 일치하는것들끼리 연결, value는 서버에 전송될 값-->
+            <label for="xs">XS:</label>
+            <input type="radio" name="size" id="xs" value="XS">
+            <label for="s">S:</label>
+            <input type="radio" name="size" id="s" value="S">
+        </p>
+
+        <p>
+            <label for="meal">Select an Element</label>
+            <select name="meal" id="meal">
+                <option value="fish">Fish</option>
+                <option value="veg">Veg</option>
+                <option value="steak">Steak</option>
+            </select>
+        </p>
+        <p>
+            <label for="textarea">Requests</label>
+            <textarea name="request" id="textarea" cols="30" rows="10"></textarea>
+        </p>
+    </form>
+
+
+</body>
+
+</html>

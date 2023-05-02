@@ -1,0 +1,128 @@
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+   font-size: 100%; 
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'GmarketSansMedium', sans-serif;
+}
+
+body {
+    background-color: #60a9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+img {
+    
+}
+
+.panel {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 25px;
+    width: 100%;
+    max-width: 960px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.price-product {
+    border-bottom: 1px solid #e1f1ff;
+}
+.price-product:last-child {
+    border-bottom: none;
+}
+.price-img {
+    margin-bottom: 25px;
+    max-width: 100%;
+}
+
+.price-header {
+    color: #888;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.price-features {
+    margin: 50px 0 25px;
+    color: #016ff9;
+}
+
+.price-features-item{
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 15px 0;
+    border-top: 1px solid #e1f1ff;
+}
+.price-features-item:last-child{
+    border-top: 1px solid #e1f1ff;
+}
+
+.price-price {
+    color: #016ff9;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.price-button {
+    border: 1px solid #9dd1ff;
+    border-radius: 10px;
+    color: #348efe;
+    display: inline-block;
+    padding: 15px 35px;
+    text-decoration: none;
+    margin: 25px 0;
+    transition: background-color 200ms ease-in-out;
+}
+.price-button:hover, .price-button:focus{
+    background-color: #e1f1ff;
+}
+
+.is-featured {
+    background-color: #48aaff;
+    color: white;
+}
+.is-featured:hover, .is-featured:focus {
+    background-color: #e1f1ff;
+}
+
+/*900 이상까지는*/
+@media (min-width: 900px){
+    .panel {
+        flex-direction: row;
+    }
+    .price-product{
+        border-bottom: none;
+        border-right: 1px solid #e1f1ff;
+        padding: 25px 50px;
+    }
+    .price-product:last-child{
+        border-right: none;
+    }
+}
+
+
+
+/*Web Font */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
