@@ -29,3 +29,12 @@ if(password.length >= 6 && password.indexOf(' ') === -1){
 }else {
     console.log("Incorrect Format For Password");
 }
+
+function makeBetweenFunc(min,max){
+    return function(num){
+        return num>=min && num<=max;
+    }
+}
+
+const isAdult = makeBetweenFunc(19,64);
+const isSenior = makeBetweenFunc(65,120);
