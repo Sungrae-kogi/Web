@@ -17,6 +17,22 @@ app.get('/', (req, res) => {
     res.render("home", { pageNum: pageNum });
 })
 
+app.get('/cats', (req,res) =>{
+    const cats = [
+        'Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston'
+    ]
+    res.render('cats', {cats});
+})
+
+//정적 assets의 절대경로 지정
+app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/r/:subreddit', (req,res) => {
+    const {subreddit} = req.params;
+    res.render('subreddit', {subreddit});
+})
+
 app.get('/rand', (req, res) => {
     const num = Math.floor(Math.random() * 10) + 1;
     //템플릿 렌더링에 전달할때 key-value 쌍 객체로 전달
