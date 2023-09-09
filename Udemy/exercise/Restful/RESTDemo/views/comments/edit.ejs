@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+
+<body>
+    <h1>Edit</h1>
+    <!--html form tag에서는 POST와 GET방식만 지원, 따라서 method-override를 사용해서
+    method에는 post로 되어있지만 action에서 PATCH로 override해줌-->
+    <form method="post" action="/comments/<%=comment.id%>?_method=PATCH">
+        <textarea name="comment" id="" cols="30" rows="10">
+            <%= comment.comment %>
+        </textarea>
+        <button>Save</button>
+    </form>
+</body>
+
+</html>
