@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
-const comments = [
+let comments = [
     {
         id: uuid(),
         username: 'Todd',
@@ -81,6 +81,16 @@ app.patch('/comments/:id', (req,res) =>{
     const newCommentText = req.body.comment;
     const foundComment = comments.find(c => c.id ===id);
     foundComment.comment = newCommentText;
+    res.redirect('/comments');
+})
+
+app.delete('/comments/:id', (req,res)=> {
+    //id를 통해 댓글을 찾아서 배열에 있는 해당 댓글을 모두 삭제
+    const {id}  = req.params;
+    
+    //새로운 배열을 반환하고 기존 댓글 배열을 업데이트하지 않음
+    comments = comments.filter(c => c.id !== id);
+
     res.redirect('/comments');
 })
 
