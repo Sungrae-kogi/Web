@@ -21,7 +21,9 @@ const movieSchema = new mongoose.Schema({
 //이 함수는 첫번째 인자로 모델의 이름을 받고, 두번째 인자로 스키마를 받습니다.
 const Movie = mongoose.model('Movie', movieSchema);
 
+//const amadeus = new Movie({title: 'Amadeus', year: 1986, score: 9.2, rating: 'R'});
 
+/*
 Movie.insertMany([
     { title: 'Amelie', year: 2001, score: 8.3, rating: 'R' },
     { title: 'Alien', year: 1979, score: 8.1, rating: 'R' },
@@ -33,3 +35,4 @@ Movie.insertMany([
     console.log("IT WORKED");
     console.log(data);
 })
+*/
