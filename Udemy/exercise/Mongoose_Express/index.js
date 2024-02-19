@@ -49,6 +49,26 @@ app.post('/farms', async (req, res) => {
     res.redirect('/farms');
 })
 
+//상품을 추가하고자 하는 농장의 id가 들어가야한다.
+app.get('/farms/:id/products/new', (req, res) => {
+    const { id } = req.params;
+    res.render('products/new', { categories, id })
+})
+
+app.post('/farms/:id/products', async (req, res) => {
+    const {id} = req.params;
+    const farm = await Farm.findById(id);
+    //id로 farm을 가져와서 product와 연결
+
+    const {name, price, category} = req.body;
+    const product = new Product({ name, price, category});
+    farm.products.push(product);
+    product.farm = farm;
+    await farm.save();
+    await product.save();
+    res.send(farm);
+})
+
 
 //PRODUCT ROUTES
 const categories = ['fruit', 'vegetables', 'dairy'];
