@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+
 const methodOverride = require('method-override');
 const Product = require('./models/product');
+const Farm = require('./models/farm');
 
 //mongo
 const mongoose = require('mongoose');
@@ -26,17 +28,40 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
+//FARM ROUTES
+app.get('/farms', async (req, res) => {
+    const farms = await Farm.find({});
+    res.render('farms/index', { farms });
+})
+
+app.get('/farms/new', (req, res) => {
+    res.render('farms/new');
+})
+
+app.get('/farms/:id', async (req, res) => {
+    const farm = await Farm.findById(req.params.id);
+    res.render('farms/show', { farm });
+})
+
+app.post('/farms', async (req, res) => {
+    const farm = new Farm(req.body);
+    await farm.save();
+    res.redirect('/farms');
+})
+
+
+//PRODUCT ROUTES
 const categories = ['fruit', 'vegetables', 'dairy'];
 
 //라우트를 위한 비동기 콜백 패턴
 app.get('/products', async (req, res) => {
-    const {category} = req.query
-    if(category){
-        const products = await Product.find({category});
+    const { category } = req.query
+    if (category) {
+        const products = await Product.find({ category });
         res.render('products/index', { products, category });
-    }else {
+    } else {
         const products = await Product.find({});    //모든 상품
-        res.render('products/index', { products, category: 'All'});
+        res.render('products/index', { products, category: 'All' });
     }
 })
 
