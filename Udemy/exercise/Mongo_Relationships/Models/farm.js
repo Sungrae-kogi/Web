@@ -46,7 +46,7 @@ Product.insertMany([
 */
 
 //Farm과 Product를 연결
-/*
+
 const makeFarm = async () => {
     const farm = new Farm({ name: 'Fully Belly Farms', city: 'Guinda, CA' });
     const melon = await Product.findOne({ name: 'Goddess Melon' });
@@ -54,18 +54,20 @@ const makeFarm = async () => {
     await farm.save();
     console.log(farm);
 }
-*/
+
 
 //makeFarm();
 
 const addProduct = async () => {
-    const farm = await Farm.findOne({name: 'Fully Belly Farms'});
-    const watermelon = await Product.findOne({name: 'Sugar Baby Watermelon'});
+    const farm = await Farm.findOne({ name: 'Fully Belly Farms' });
+    const watermelon = await Product.findOne({ name: 'Sugar Baby Watermelon' });
     farm.products.push(watermelon);
     await farm.save();
     console.log(farm);
 
     //mongosh에서 db.farm.find() 해보면 products에는 _id값만 들어가있는것을 확인할 수 있다.
 }
-
-addProduct();
+ 
+const farm = Farm.findOne({ name: 'Fully Belly Farms'}).populate('products').exec();
+console.log(farm.products);
+//Farm.findOne({ name: 'Full Belly Farms' }).populate('products').then(farm => console.log(farm));
