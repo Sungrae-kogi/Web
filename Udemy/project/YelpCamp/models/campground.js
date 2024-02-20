@@ -1,16 +1,19 @@
 const mongoose = require('mongoose');
+const Review = require('./review');
 const Schema = mongoose.Schema;
 
 const CampGroundSchema = new Schema({
     title: String,
     image: String,
-    price: {
-        type: Number,
-        required: true, 
-        min: [0, '가격은 음수가 될 수 없습니다'],
-    },
+    price: Number,
     description: String,
-    location: String
+    location: String,
+    reviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ]
 });
 
 
