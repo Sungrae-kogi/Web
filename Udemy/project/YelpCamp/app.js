@@ -55,7 +55,7 @@ const validateCampground = (req, res, next) => {
 }
 
 const validateReview = (req, res, next) => {
-    const {error} = reviewSchema.validate(req.body);
+    const { error } = reviewSchema.validate(req.body);
     if (error) {
         const msg = error.details.map(el => el.message).join(',')
         throw new ExpressError(msg, 400);
@@ -123,6 +123,13 @@ app.post('/campgrounds/:id/reviews', validateReview, catchAsync(async (req, res)
     res.redirect(`/campgrounds/${campground._id}`);
 }));
 
+
+app.delete('/campgrounds/:id/reviews/:reviewId', catchAsync(async (req, res) => {
+    const { id, reviewId } = req.params;
+    await Campground.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });   //캠핑장id
+    await Review.findByIdAndDelete(reviewId)    //리뷰id
+    res.redirect(`/campgrounds/${id}`);
+}))
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
