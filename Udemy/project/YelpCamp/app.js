@@ -33,12 +33,13 @@ const app = express();
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
+
 app.set('views', path.join(__dirname, '/views'));
 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-
+app.use(express.static(path.join(__dirname, 'public')));  //express가 public 디렉토리를 다룰 수 있도록
 
 //validation Schema
 const validateCampground = (req, res, next) => {
