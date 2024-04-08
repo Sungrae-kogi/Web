@@ -30,4 +30,4 @@ const login = async (pw, hashedPw) => {
 }
 
 //이런식으로 로그인가능 여부를 백그라운드에서 확인한다.
-//login('monkey', '2b$10$9K/jdRPlhC1vSZT4AYoWk.LEhGgj..quBt61UHp/YDvwQ6o5KiVCW');
+hashPassword('monkey');
