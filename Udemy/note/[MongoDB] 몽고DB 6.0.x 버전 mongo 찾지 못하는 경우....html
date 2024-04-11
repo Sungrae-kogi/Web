@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://yaga.tistory.com/557 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/f(5).txt"></script><script type="text/javascript">if (!window.T) { window.T = {} }
+window.T.config = {"TOP_SSL_URL":"https://www.tistory.com","PREVIEW":false,"ROLE":"guest","PREV_PAGE":"","NEXT_PAGE":"","BLOG":{"id":5031969,"name":"yaga","title":"머털&amp;보약의 기록","isDormancy":false,"nickName":"Bo-yak","status":"open","profileStatus":"normal"},"NEED_COMMENT_LOGIN":false,"COMMENT_LOGIN_CONFIRM_MESSAGE":"","LOGIN_URL":"https://www.tistory.com/auth/login/?redirectUrl=https://yaga.tistory.com/557","DEFAULT_URL":"https://yaga.tistory.com","USER":{"name":null,"homepage":null,"id":0,"profileImage":null},"SUBSCRIPTION":{"status":"none","isConnected":false,"isPending":false,"isWait":false,"isProcessing":false,"isNone":true},"IS_LOGIN":false,"HAS_BLOG":false,"IS_SUPPORT":false,"TOP_URL":"http://www.tistory.com","JOIN_URL":"https://www.tistory.com/member/join","ROLE_GROUP":"visitor"};
+window.T.entryInfo = {"entryId":557,"isAuthor":false,"categoryId":1062287,"categoryLabel":"IT/DBMS"};
+window.appInfo = {"domain":"tistory.com","topUrl":"https://www.tistory.com","loginUrl":"https://www.tistory.com/auth/login","logoutUrl":"https://www.tistory.com/auth/logout"};
+window.initData = {};
+
+window.TistoryBlog = {
+    basePath: "",
+    url: "https://yaga.tistory.com",
+    tistoryUrl: "https://yaga.tistory.com",
+    manageUrl: "https://yaga.tistory.com/manage",
+    token: "4T1FfCh5cZf9UXiqMHchL/NxUZvunnkvDPEmby2RAIYS2cgvGoTFROFLJvB+9S3r"
+};
+var servicePath = "";
+var blogURL = "";</script>
+
+                
+                
+                
+                        <!-- BusinessLicenseInfo - START -->
+        
+            <link href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/style.css" rel="stylesheet" type="text/css">
+
+            <script>function switchFold(entryId) {
+    var businessLayer = document.getElementById("businessInfoLayer_" + entryId);
+
+    if (businessLayer) {
+        if (businessLayer.className.indexOf("unfold_license") > 0) {
+            businessLayer.className = "business_license_layer";
+        } else {
+            businessLayer.className = "business_license_layer unfold_license";
+        }
+    }
+}
+</script>
+
+        
+        <!-- BusinessLicenseInfo - END -->
+        <!-- CommentCaptcha - START -->
+        <link href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/style(1).css" rel="stylesheet" type="text/css">
+<script type="text/javascript">var needCommentCaptcha = true;
+var commentCaptchaType = 'bottom';</script>
+
+        <!-- CommentCaptcha - END -->
+
+        <!-- DaumShow - START -->
+        <style type="text/css">#daumSearchBox {
+    height: 21px;
+    background-image: url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bg_search2_2.gif);
+    margin: 5px auto;
+    padding: 0;
+}
+
+#daumSearchBox input {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#daumSearchBox #daumLogo {
+    width: 34px;
+    height: 21px;
+    float: left;
+    margin-right: 5px;
+    background-image: url(//i1.daumcdn.net/img-media/tistory/img/bg_search1_2_2010ci.gif);
+}
+
+#daumSearchBox #show_q {
+    background-color: transparent;
+    border: none;
+    font: 12px Gulim, Sans-serif;
+    color: #555;
+    margin-top: 4px;
+    margin-right: 15px;
+    float: left;
+}
+
+#daumSearchBox #show_btn {
+    background-image: url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bt_search_2.gif);
+    width: 37px;
+    height: 21px;
+    float: left;
+    margin: 0;
+    cursor: pointer;
+    text-indent: -1000em;
+}
+</style>
+
+        <!-- DaumShow - END -->
+
+        <!-- GoogleAnalytics - START -->
+        <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/js" async="async"></script>
+<script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config','G-YM247C7RQC', {
+    cookie_domain: 'auto',
+    cookie_flags: 'max-age=0;domain=.tistory.com',
+    cookie_expires: 7 * 24 * 60 * 60 // 7 days, in seconds
+});</script>
+
+        <!-- GoogleAnalytics - END -->
+
+<!-- MetaTag - START -->
+<meta name="naver-site-verification" content="b8589d6475bf720565841e5eb3a52b5b0411ad24">
+<!-- MetaTag - END -->
+
+<!-- System - START -->
+
+<!-- System - END -->
+
+        <!-- GoogleSearchConsole - START -->
+        
+<!-- BEGIN GOOGLE_SITE_VERIFICATION -->
+<meta name="google-site-verification" content="O6RVIYUIBAKeuELCKPgBOy1OyfbSyMKLE4--Ww35TgQ">
+<!-- END GOOGLE_SITE_VERIFICATION -->
+
+        <!-- GoogleSearchConsole - END -->
+
+        <!-- TistoryProfileLayer - START -->
+        <link href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/style(2).css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/script.js.다운로드"></script>
+
+        <!-- TistoryProfileLayer - END -->
+
+                
+                <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="format-detection" content="telephone=no">
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/jquery-3.5.1.min.js.다운로드" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/lightbox-v2.10.0.min.js.다운로드" defer=""></script>
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/tiara.min.js.다운로드"></script><meta name="referrer" content="always">
+<meta name="google-adsense-platform-account" content="ca-host-pub-9691043933427338">
+<meta name="google-adsense-platform-domain" content="tistory.com">
+<meta name="google-adsense-account" content="ca-pub-6944215562275641">
+<meta name="description" content="설치 환경: MongoDB 6.0.8 몽고DB 설치 후 환경변수까지 잡아 줬는데 mongo 명령어를 찾지 못했다. 구글링 해보니 mongo.exe가 없어져서 mongosh를 다운받아서 사용하라고 한다. 위 사이트에서 sh를 다운로드 후 mongosh.exe와 dll파일을 몽고DB 설치 경로/bin에 복붙 한 다음 cmd에서 &quot;mongosh&quot;를 입력하면 잘된다.(환경변수 세팅 되어 있어야 함) 참조: https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0 mongo.exe not installed in Version 6.0.0 I installed MongoDB community Server from this..">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yaga.tistory.com/557">
+<meta property="og.article.author" content="devLsy">
+<meta property="og:site_name" content="머털&amp;보약의 기록">
+<meta property="og:title" content="[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우...">
+<meta name="by" content="devLsy">
+<meta property="og:description" content="설치 환경: MongoDB 6.0.8 몽고DB 설치 후 환경변수까지 잡아 줬는데 mongo 명령어를 찾지 못했다. 구글링 해보니 mongo.exe가 없어져서 mongosh를 다운받아서 사용하라고 한다. 위 사이트에서 sh를 다운로드 후 mongosh.exe와 dll파일을 몽고DB 설치 경로/bin에 복붙 한 다음 cmd에서 &quot;mongosh&quot;를 입력하면 잘된다.(환경변수 세팅 되어 있어야 함) 참조: https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0 mongo.exe not installed in Version 6.0.0 I installed MongoDB community Server from this..">
+<meta property="og:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdcdKAk%2FbtsnZy0Y40B%2FSH5EYoNU9xR3GdluxCN9K0%2Fimg.png">
+<meta property="article:section" content="&#39;IT 인터넷&#39;">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TISTORY">
+<meta name="twitter:title" content="[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우...">
+<meta name="twitter:description" content="설치 환경: MongoDB 6.0.8 몽고DB 설치 후 환경변수까지 잡아 줬는데 mongo 명령어를 찾지 못했다. 구글링 해보니 mongo.exe가 없어져서 mongosh를 다운받아서 사용하라고 한다. 위 사이트에서 sh를 다운로드 후 mongosh.exe와 dll파일을 몽고DB 설치 경로/bin에 복붙 한 다음 cmd에서 &quot;mongosh&quot;를 입력하면 잘된다.(환경변수 세팅 되어 있어야 함) 참조: https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0 mongo.exe not installed in Version 6.0.0 I installed MongoDB community Server from this..">
+<meta property="twitter:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdcdKAk%2FbtsnZy0Y40B%2FSH5EYoNU9xR3GdluxCN9K0%2Fimg.png">
+<meta content="https://yaga.tistory.com/557" property="dg:plink">
+<meta name="plink">
+<meta name="title" content="[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우...">
+<meta name="article:media_name" content="머털&amp;보약의 기록">
+<meta property="article:mobile_url" content="https://yaga.tistory.com/m/557">
+<meta property="article:pc_url" content="https://yaga.tistory.com/557">
+<meta property="article:mobile_view_url" content="https://yaga.tistory.com/m/557">
+<meta property="article:pc_view_url" content="https://yaga.tistory.com/557">
+<meta property="article:talk_channel_view_url" content="https://yaga.tistory.com/m/557">
+<meta property="article:pc_service_home" content="https://www.tistory.com">
+<meta property="article:mobile_service_home" content="https://www.tistory.com/m">
+<meta property="article:txid" content="5031969_557">
+<meta property="article:published_time" content="2023-07-17T20:33:05+09:00">
+<meta property="og:regDate" content="20230717083305">
+<meta property="article:modified_time" content="2023-07-18T10:44:25+09:00">
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/lightbox.min.css">
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/font.css">
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/content.css">
+<script type="text/javascript">(function() {
+    var tjQuery = jQuery.noConflict(true);
+    window.tjQuery = tjQuery;
+    window.orgjQuery = window.jQuery; window.jQuery = tjQuery;
+    window.jQuery = window.orgjQuery; delete window.orgjQuery;
+})()</script>
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/base.js.다운로드"></script>
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/kakao.min.js.다운로드"></script>
+
+                
+  <title>[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우...</title>
+  <meta name="title" content="[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우... :: 머털&amp;보약의 기록">
+  <meta name="description" content="개발하는 머털과 궁금한 게 많은 보약의 기록 BLOG★">
+  
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <link rel="alternate" type="application/rss+xml" title="머털&amp;보약의 기록" href="https://yaga.tistory.com/rss">
+  <link rel="shortcut icon" href="https://yaga.tistory.com/favicon.ico">
+  <link rel="stylesheet" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/xeicon.min.css">
+  <link rel="stylesheet" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/css">
+  <link rel="stylesheet" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/style(3).css">
+  <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/jquery-1.12.4.min.js.다운로드"></script>
+  <script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/clipboard.min.js.다운로드"></script>
+  <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/vh-check.min.js.다운로드"></script>
+  <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/common.js.다운로드" defer=""></script>
+  <script> (function () { var test = vhCheck();}()); </script>
+  <!-- tocbot --> 
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/tocbot.min.js.다운로드"></script>
+<link rel="stylesheet" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/tocbot.css">
+<!-- tocbot -->
+
+                
+                
+                <style type="text/css">.another_category {
+    border: 1px solid #E5E5E5;
+    padding: 10px 10px 5px;
+    margin: 10px 0;
+    clear: both;
+}
+
+.another_category h4 {
+    font-size: 12px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #E5E5E5 !important;
+    padding: 2px 0 6px !important;
+}
+
+.another_category h4 a {
+    font-weight: bold !important;
+}
+
+.another_category table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+
+* html .another_category table {
+    width: auto !important;
+}
+
+*:first-child + html .another_category table {
+    width: auto !important;
+}
+
+.another_category th, .another_category td {
+    padding: 0 0 4px !important;
+}
+
+.another_category th {
+    text-align: left;
+    font-size: 12px !important;
+    font-weight: normal;
+    word-break: break-all;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.another_category td {
+    text-align: right;
+    width: 80px;
+    font-size: 11px;
+}
+
+.another_category th a {
+    font-weight: normal;
+    text-decoration: none;
+    border: none !important;
+}
+
+.another_category th a.current {
+    font-weight: bold;
+    text-decoration: none !important;
+    border-bottom: 1px solid !important;
+}
+
+.another_category th span {
+    font-weight: normal;
+    text-decoration: none;
+    font: 10px Tahoma, Sans-serif;
+    border: none !important;
+}
+
+.another_category_color_gray, .another_category_color_gray h4 {
+    border-color: #E5E5E5 !important;
+}
+
+.another_category_color_gray * {
+    color: #909090 !important;
+}
+
+.another_category_color_gray th a.current {
+    border-color: #909090 !important;
+}
+
+.another_category_color_gray h4, .another_category_color_gray h4 a {
+    color: #737373 !important;
+}
+
+.another_category_color_red, .another_category_color_red h4 {
+    border-color: #F6D4D3 !important;
+}
+
+.another_category_color_red * {
+    color: #E86869 !important;
+}
+
+.another_category_color_red th a.current {
+    border-color: #E86869 !important;
+}
+
+.another_category_color_red h4, .another_category_color_red h4 a {
+    color: #ED0908 !important;
+}
+
+.another_category_color_green, .another_category_color_green h4 {
+    border-color: #CCE7C8 !important;
+}
+
+.another_category_color_green * {
+    color: #64C05B !important;
+}
+
+.another_category_color_green th a.current {
+    border-color: #64C05B !important;
+}
+
+.another_category_color_green h4, .another_category_color_green h4 a {
+    color: #3EA731 !important;
+}
+
+.another_category_color_blue, .another_category_color_blue h4 {
+    border-color: #C8DAF2 !important;
+}
+
+.another_category_color_blue * {
+    color: #477FD6 !important;
+}
+
+.another_category_color_blue th a.current {
+    border-color: #477FD6 !important;
+}
+
+.another_category_color_blue h4, .another_category_color_blue h4 a {
+    color: #1960CA !important;
+}
+
+.another_category_color_violet, .another_category_color_violet h4 {
+    border-color: #E1CEEC !important;
+}
+
+.another_category_color_violet * {
+    color: #9D64C5 !important;
+}
+
+.another_category_color_violet th a.current {
+    border-color: #9D64C5 !important;
+}
+
+.another_category_color_violet h4, .another_category_color_violet h4 a {
+    color: #7E2CB5 !important;
+}
+</style>
+
+                
+                <link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/revenue.css">
+<link rel="canonical" href="https://yaga.tistory.com/557">
+
+<!-- BEGIN STRUCTURED_DATA -->
+<script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https://yaga.tistory.com/557","name":null},"url":"https://yaga.tistory.com/557","headline":"[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우...","description":"설치 환경: MongoDB 6.0.8 몽고DB 설치 후 환경변수까지 잡아 줬는데 mongo 명령어를 찾지 못했다. 구글링 해보니 mongo.exe가 없어져서 mongosh를 다운받아서 사용하라고 한다. 위 사이트에서 sh를 다운로드 후 mongosh.exe와 dll파일을 몽고DB 설치 경로/bin에 복붙 한 다음 cmd에서 &quot;mongosh&quot;를 입력하면 잘된다.(환경변수 세팅 되어 있어야 함) 참조: https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0 mongo.exe not installed in Version 6.0.0 I installed MongoDB community Server from this..","author":{"@type":"Person","name":"Bo-yak","logo":null},"image":{"@type":"ImageObject","url":"https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdcdKAk%2FbtsnZy0Y40B%2FSH5EYoNU9xR3GdluxCN9K0%2Fimg.png","width":"800px","height":"800px"},"datePublished":"20230717T20:33:05","dateModified":"20230718T10:44:25","publisher":{"@type":"Organization","name":"TISTORY","logo":{"@type":"ImageObject","url":"https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png","width":"800px","height":"800px"}}}
+</script>
+<!-- END STRUCTURED_DATA -->
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/dialog.css">
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/font(1).css">
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/postBtn.css">
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/comment.css">
+<link rel="stylesheet" type="text/css" href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/tistory.css">
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/common(1).js.다운로드"></script>
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/comment.js.다운로드" defer=""></script>
+
+                
+                <style type="text/css">#DragSchLayer{display:block;position:absolute;z-index:1000;width:61px;height:31px;margin:-30px 0px 0px -5px;background:url(//search1.daumcdn.net/search/statics/common/pi/btn_drag_rect.png);cursor:pointer}             @media             only screen and (-webkit-min-device-pixel-ratio: 1.5),             only screen and (min-device-pixel-ratio: 1.5),             only screen and (min-resolution: 1.5dppx) {             #DragSchLayer{background-image:url(//search1.daumcdn.net/search/statics/common/pi/r2/btn_drag_rect.png);background-size:61px 31px}}            </style><style>@font-face{font-family:swiper-icons;src:url("data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA");font-weight:400;font-style:normal}:root{--swiper-theme-color:#007aff}.swiper{margin-left:auto;margin-right:auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:1}.swiper-vertical>.swiper-wrapper{flex-direction:column}.swiper-wrapper{position:relative;width:100%;height:100%;z-index:1;display:flex;transition-property:transform;box-sizing:content-box}.swiper-android .swiper-slide,.swiper-wrapper{transform:translate3d(0px, 0, 0)}.swiper-pointer-events{touch-action:pan-y}.swiper-pointer-events.swiper-vertical{touch-action:pan-x}.swiper-slide{flex-shrink:0;width:100%;height:100%;position:relative;transition-property:transform}.swiper-slide-invisible-blank{visibility:hidden}.swiper-autoheight,.swiper-autoheight .swiper-slide{height:auto}.swiper-autoheight .swiper-wrapper{align-items:flex-start;transition-property:transform,height}.swiper-backface-hidden .swiper-slide{transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-3d,.swiper-3d.swiper-css-mode .swiper-wrapper{perspective:1200px}.swiper-3d .swiper-cube-shadow,.swiper-3d .swiper-slide,.swiper-3d .swiper-slide-shadow,.swiper-3d .swiper-slide-shadow-bottom,.swiper-3d .swiper-slide-shadow-left,.swiper-3d .swiper-slide-shadow-right,.swiper-3d .swiper-slide-shadow-top,.swiper-3d .swiper-wrapper{transform-style:preserve-3d}.swiper-3d .swiper-slide-shadow,.swiper-3d .swiper-slide-shadow-bottom,.swiper-3d .swiper-slide-shadow-left,.swiper-3d .swiper-slide-shadow-right,.swiper-3d .swiper-slide-shadow-top{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:10}.swiper-3d .swiper-slide-shadow{background:rgba(0,0,0,.15)}.swiper-3d .swiper-slide-shadow-left{background-image:linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))}.swiper-3d .swiper-slide-shadow-right{background-image:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))}.swiper-3d .swiper-slide-shadow-top{background-image:linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))}.swiper-3d .swiper-slide-shadow-bottom{background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))}.swiper-css-mode>.swiper-wrapper{overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.swiper-css-mode>.swiper-wrapper::-webkit-scrollbar{display:none}.swiper-css-mode>.swiper-wrapper>.swiper-slide{scroll-snap-align:start start}.swiper-horizontal.swiper-css-mode>.swiper-wrapper{scroll-snap-type:x mandatory}.swiper-vertical.swiper-css-mode>.swiper-wrapper{scroll-snap-type:y mandatory}.swiper-centered>.swiper-wrapper::before{content:"";flex-shrink:0;order:9999}.swiper-centered.swiper-horizontal>.swiper-wrapper>.swiper-slide:first-child{margin-inline-start:var(--swiper-centered-offset-before)}.swiper-centered.swiper-horizontal>.swiper-wrapper::before{height:100%;min-height:1px;width:var(--swiper-centered-offset-after)}.swiper-centered.swiper-vertical>.swiper-wrapper>.swiper-slide:first-child{margin-block-start:var(--swiper-centered-offset-before)}.swiper-centered.swiper-vertical>.swiper-wrapper::before{width:100%;min-width:1px;height:var(--swiper-centered-offset-after)}.swiper-centered>.swiper-wrapper>.swiper-slide{scroll-snap-align:center center;scroll-snap-stop:always}</style><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+
+
+                                                <body id="tt-body-page" class="headerslogundisplayoff headerbannerdisplayon listmorenumber listmorebuttonmobile   use-menu-topnavmenu-wrp">
+                
+                
+                
+
+  
+    <!-- 사이드바 서랍형일때 wrap-right / wrap-drawer -->
+    <div id="wrap" class="wrap-right" style="height: auto !important;">
+
+      <!-- header -->
+      <header class="header">
+        <div class="line-bottom display-none"></div>
+        <!-- inner-header -->
+        <div class="inner-header  topnavmenu">
+
+          <div class="box-header">
+            <h1 class="title-logo">
+              <a href="https://yaga.tistory.com/" title="머털&amp;보약의 기록" class="link_logo">
+                
+                
+                  머털&amp;보약의 기록
+                
+              </a>
+            </h1>
+
+            <!-- search-bar for PC -->
+            <div class="util use-top">
+              <div class="search">
+              <input class="searchInput" type="text" name="search" value="" placeholder="Search..." onkeypress="if (event.keyCode == 13) { requestSearch(&#39;.util.use-top .searchInput&#39;) }">
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- area-align -->
+          <div class="area-align">
+
+            
+
+            <!-- area-gnb -->
+            <div class="area-gnb">
+              <nav class="topnavmenu">
+                <ul>
+  <li class="t_menu_home first"><a href="https://yaga.tistory.com/" target="">홈</a></li>
+  <li class="t_menu_tag"><a href="https://yaga.tistory.com/tag" target="">태그</a></li>
+  <li class="t_menu_guestbook last"><a href="https://yaga.tistory.com/guestbook" target="">방명록</a></li>
+</ul>
+              </nav>
+            </div>
+
+            <button type="button" class="button-menu">
+              <svg xmlns="//www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14">
+                <path fill="#333" fill-rule="evenodd" d="M0 0h20v2H0V0zm0 6h20v2H0V6zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+
+            
+
+          </div>
+          <!-- // area-align -->
+
+        </div>
+        <!-- // inner-header -->
+
+      </header>
+      <!-- // header -->
+
+      
+
+      <!-- container -->
+      <div id="container" style="height: auto !important;">
+
+        <main class="main" style="height: auto !important;">
+
+          <!-- area-main -->
+          <div class="area-main" style="height: auto !important;">
+
+            <!-- s_list / 카테고리, 검색 리스트 -->
+            <div class="area-common">
+              
+            </div>
+            <!-- // s_list / 카테고리, 검색 리스트 -->
+
+            <!-- area-view / 뷰페이지 및 기본 영역 -->
+            <div class="area-view" style="height: auto !important;">
+              <!-- s_article_rep -->
+                              
+                    
+
+                <!-- s_permalink_article_rep / 뷰페이지 -->
+                
+                  <!-- 이미지가 없는 경우 article-header-noimg -->
+                  <div class="article-header" thumbnail="https://img1.daumcdn.net/thumb/R1440x0/?scode=mtistory2&amp;fname=https://blog.kakaocdn.net/dn/dcdKAk/btsnZy0Y40B/SH5EYoNU9xR3GdluxCN9K0/img.png" style="background-image: url(&quot;https://img1.daumcdn.net/thumb/R1440x0/?scode=mtistory2&amp;fname=https://blog.kakaocdn.net/dn/dcdKAk/btsnZy0Y40B/SH5EYoNU9xR3GdluxCN9K0/img.png&quot;);">
+                    <div class="inner-header">
+                      <div class="box-meta">
+                        <p class="category">IT/DBMS</p>
+                        <h2 class="title-article">[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우...</h2>
+                        <div class="box-info">
+                          <span class="writer">devLsy</span>
+                          <span class="date">2023. 7. 17. 20:33</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+<!-- toc -->
+<div class="toc toc-fixed">
+</div>
+<!-- toc -->
+
+                  <!-- 에디터 영역 -->
+                  <div class="article-view" style="height: auto !important;">
+                    
+                    <!-- System - START -->
+        <div class="revenue_unit_wrap">
+  <div class="revenue_unit_item adsense responsive">
+    <div class="revenue_unit_info">반응형</div>
+    <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/f(6).txt" async="async"></script>
+    <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-host="ca-host-pub-9691043933427338" data-ad-client="ca-pub-6944215562275641" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" style="border: none; height: 280px; width: 640px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:640px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="640" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/ads.html" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CKXK2PnRuoUDFc_0TAIdt3wGwA" data-load-complete="true"></iframe></div></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+        <!-- System - END -->
+
+            <div class="contents_style"><p data-ke-size="size18"><b>설치 환경: MongoDB 6.0.8</b></p>
+<p></p><figure class="imageblock alignCenter" data-ke-mobilestyle="widthOrigin" data-origin-width="588" data-origin-height="149"><span data-url="https://blog.kakaocdn.net/dn/u7KLx/btsnZIhZLvp/VIhAuoOBBYN1PMGdk3DIzk/img.png" data-lightbox="lightbox"><img src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fu7KLx%2FbtsnZIhZLvp%2FVIhAuoOBBYN1PMGdk3DIzk%2Fimg.png" onerror="this.onerror=null; this.src=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;; this.srcset=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;;" data-origin-width="588" data-origin-height="149"></span></figure>
+<p></p>
+<p data-ke-size="size18">몽고DB 설치 후 환경변수까지 잡아 줬는데 mongo 명령어를 찾지 못했다.</p>
+<p data-ke-size="size18">구글링 해보니 mongo.exe가 없어져서&nbsp; <b><a title="mongosh" href="https://www.mongodb.com/try/download/shell" target="_blank" rel="noopener">mongosh</a></b>를 다운받아서 사용하라고 한다.</p>
+<p data-ke-size="size18">위 사이트에서 sh를 다운로드 후 mongosh.exe와 dll파일을&nbsp;</p>
+<p></p><figure class="imageblock alignCenter" data-ke-mobilestyle="widthOrigin" data-origin-width="317" data-origin-height="172"><span data-url="https://blog.kakaocdn.net/dn/crJ1H3/btsnXij312o/WbLA8gTp9p0BScS0RbMSxk/img.png" data-lightbox="lightbox"><img src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/img(1).png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcrJ1H3%2FbtsnXij312o%2FWbLA8gTp9p0BScS0RbMSxk%2Fimg.png" onerror="this.onerror=null; this.src=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;; this.srcset=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;;" data-origin-width="317" data-origin-height="172"></span></figure>
+<p></p>
+<p data-ke-size="size18">몽고DB 설치 경로/bin에 복붙 한 다음 cmd에서 "mongosh"를 입력하면 잘된다.(환경변수 세팅 되어 있어야 함)</p>
+<p></p><figure class="imageblock alignCenter" data-ke-mobilestyle="widthOrigin" data-origin-width="1062" data-origin-height="395"><span data-url="https://blog.kakaocdn.net/dn/dcdKAk/btsnZy0Y40B/SH5EYoNU9xR3GdluxCN9K0/img.png" data-lightbox="lightbox"><img src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/img(2).png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdcdKAk%2FbtsnZy0Y40B%2FSH5EYoNU9xR3GdluxCN9K0%2Fimg.png" onerror="this.onerror=null; this.src=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;; this.srcset=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;;" width="700" height="260" data-origin-width="1062" data-origin-height="395"></span></figure>
+<figure class="imageblock alignCenter" data-ke-mobilestyle="widthOrigin" data-origin-width="1704" data-origin-height="361"><span data-url="https://blog.kakaocdn.net/dn/tQjIN/btsn1aE1x4l/1Z3YEsqcTlziameVywkUw1/img.png" data-lightbox="lightbox"><img src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/img(3).png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtQjIN%2Fbtsn1aE1x4l%2F1Z3YEsqcTlziameVywkUw1%2Fimg.png" onerror="this.onerror=null; this.src=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;; this.srcset=&#39;//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png&#39;;" width="700" height="148" data-origin-width="1704" data-origin-height="361"></span></figure>
+<p></p>
+<p data-ke-size="size18"><b>참조: <a href="https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0" target="_blank" rel="noopener" style="">https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0</a></b></p>
+<figure id="og_1689593346648" contenteditable="false" data-ke-type="opengraph" data-ke-align="alignCenter" data-og-type="website" data-og-title="mongo.exe not installed in Version 6.0.0" data-og-description="I installed MongoDB community Server from this link. But when I look into C:\Program Files\MongoDB\Server\6.0\bin , I am not able to locate mongo.exe file. I am able to see mongod.exe and mongos.ex..." data-og-host="stackoverflow.com" data-og-source-url="https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0" data-og-url="https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0" data-og-image="https://scrap.kakaocdn.net/dn/cKnbmP/hyTmtzHiRH/VtXRcpGd64SpxKK4kQL4NK/img.png?width=316&amp;height=316&amp;face=0_0_316_316,https://scrap.kakaocdn.net/dn/bWsLpr/hyTmAMmjqy/NGyFbR8OTCSG1IKH9j5kHK/img.png?width=1920&amp;height=1080&amp;face=0_0_1920_1080"><a href="https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0" target="_blank" rel="noopener" data-source-url="https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0">
+<div class="og-image" style="background-image: url(&#39;https://scrap.kakaocdn.net/dn/cKnbmP/hyTmtzHiRH/VtXRcpGd64SpxKK4kQL4NK/img.png?width=316&amp;height=316&amp;face=0_0_316_316,https://scrap.kakaocdn.net/dn/bWsLpr/hyTmAMmjqy/NGyFbR8OTCSG1IKH9j5kHK/img.png?width=1920&amp;height=1080&amp;face=0_0_1920_1080&#39;);">&nbsp;</div>
+<div class="og-text">
+<p class="og-title" data-ke-size="size16">mongo.exe not installed in Version 6.0.0</p>
+<p class="og-desc" data-ke-size="size16">I installed MongoDB community Server from this link. But when I look into C:\Program Files\MongoDB\Server\6.0\bin , I am not able to locate mongo.exe file. I am able to see mongod.exe and mongos.ex...</p>
+<p class="og-host" data-ke-size="size16">stackoverflow.com</p>
+</div>
+</a></figure></div>
+                    <!-- System - START -->
+        <div class="revenue_unit_wrap">
+  <div class="revenue_unit_item adsense responsive">
+    <div class="revenue_unit_info">반응형</div>
+    <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/f(6).txt" async="async"></script>
+    <ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-host="ca-host-pub-9691043933427338" data-ad-client="ca-pub-6944215562275641" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" style="border: none; height: 0px; width: 640px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 640px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="640" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/ads(1).html" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CN3O2fnRuoUDFRmGuQUdJngF2g" data-load-complete="true"></iframe></div></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+        <!-- System - END -->
+
+<script onerror="changeAdsenseToAdfit()" async="" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/f(7).txt" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- inventory -->
+<ins class="adsbygoogle" style="margin: 50px 0px; display: block; height: 280px;" data-ad-client="ca-pub-9527582522912841" data-ad-slot="4947159016" data-ad-format="auto" data-full-width-responsive="true" data-ad-type="inventory" data-ad-adfit-unit="DAN-HCZEy0KQLPMGnGuC" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_3_host" style="border: none; height: 280px; width: 640px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:640px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="640" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/ads(2).html" data-google-container-id="a!4" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CMmw2vnRuoUDFVpTwgUd-xQIGw" data-load-complete="true"></iframe></div></ins>
+
+<script id="adsense_script">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script>
+    if(window.ObserveAdsenseUnfilledState !== undefined){ ObserveAdsenseUnfilledState(); }
+</script>
+                    <div class="container_postbtn #post_button_group">
+  <div class="postbtn_like"><script>window.ReactionButtonType = 'reaction';
+window.ReactionApiUrl = '//yaga.tistory.com/reaction';
+window.ReactionReqBody = {
+    entryId: 557
+}</script>
+<div class="wrap_btn" id="reaction-557"><button class="btn_post uoc-icon"><div class="uoc-icon"><span class="ico_postbtn ico_like">좋아요</span><span class="txt_like uoc-count">2</span></div></button></div>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/reaction-button-container.min.js.다운로드"></script><div class="wrap_btn wrap_btn_share"><button type="button" class="btn_post sns_btn btn_share" aria-expanded="false" data-thumbnail-url="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdcdKAk%2FbtsnZy0Y40B%2FSH5EYoNU9xR3GdluxCN9K0%2Fimg.png" data-title="[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..." data-description="설치 환경: MongoDB 6.0.8 몽고DB 설치 후 환경변수까지 잡아 줬는데 mongo 명령어를 찾지 못했다. 구글링 해보니 mongo.exe가 없어져서 mongosh를 다운받아서 사용하라고 한다. 위 사이트에서 sh를 다운로드 후 mongosh.exe와 dll파일을 몽고DB 설치 경로/bin에 복붙 한 다음 cmd에서 &quot;mongosh&quot;를 입력하면 잘된다.(환경변수 세팅 되어 있어야 함) 참조: https://stackoverflow.com/questions/73081708/mongo-exe-not-installed-in-version-6-0-0 mongo.exe not installed in Version 6.0.0 I installed MongoDB community Server from this.." data-profile-image="https://tistory1.daumcdn.net/tistory/5031969/attach/fbdd551407a244fbbe13d5033eb06f4f" data-profile-name="devLsy" data-pc-url="https://yaga.tistory.com/557" data-relative-pc-url="/557" data-blog-title="머털&amp;보약의 기록"><span class="ico_postbtn ico_share">공유하기</span></button>
+  <div class="layer_post" id="tistorySnsLayer" style="display: none;"><div class="bundle_post"><button class="btn_mark" data-service="url"><span class="ico_sns ico_url"></span><span class="txt_sns">URL 복사</span></button><button class="btn_mark" data-service="kakaotalk"><span class="ico_sns ico_kt"></span><span class="txt_sns">카카오톡 공유</span></button><button class="btn_mark" data-service="facebook"><span class="ico_sns ico_fb"></span><span class="txt_sns">페이스북 공유</span></button><button class="btn_mark" data-service="twitter"><span class="ico_sns ico_x"></span><span class="txt_sns">엑스 공유</span></button><span class="ico_postbtn ico_arrbt"></span></div></div>
+</div><div class="wrap_btn wrap_btn_etc" data-entry-id="557" data-entry-visibility="public" data-category-visibility="public"><button type="button" class="btn_post btn_etc2" aria-expanded="false"><span class="ico_postbtn ico_etc">게시글 관리</span></button>
+  <div class="layer_post" id="tistoryEtcLayer" style="display: none;"></div>
+</div></div>
+<button type="button" class="btn_menu_toolbar btn_subscription  #subscribe" data-blog-id="5031969" data-url="https://yaga.tistory.com/557" data-device="web_pc"><em class="txt_state">구독하기</em><strong class="txt_tool_id">머털&amp;보약의 기록</strong><span class="img_common_tistory ico_check_type1"></span></button><div class="postbtn_ccl" data-ccl-type="1" data-ccl-derive="2">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" class="link_ccl" rel="license">
+        <span class="bundle_ccl">
+            <span class="ico_postbtn ico_ccl1">저작자표시</span> <span class="ico_postbtn ico_ccl2">비영리</span> <span class="ico_postbtn ico_ccl3">변경금지</span> 
+        </span>
+    </a>
+</div>
+<!--
+<rdf:RDF xmlns="https://web.resource.org/cc/" xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Work rdf:about="">
+        <license rdf:resource="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" />
+    </Work>
+    <License rdf:about="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko">
+        <permits rdf:resource="https://web.resource.org/cc/Reproduction"/>
+        <permits rdf:resource="https://web.resource.org/cc/Distribution"/>
+        <requires rdf:resource="https://web.resource.org/cc/Notice"/>
+        <requires rdf:resource="https://web.resource.org/cc/Attribution"/>
+        <prohibits rdf:resource="https://web.resource.org/cc/CommercialUse"/>
+
+    </License>
+</rdf:RDF>
+-->  <div data-tistory-react-app="SupportButton"></div>
+</div>
+
+                    <!-- PostListinCategory - START -->
+<div class="another_category another_category_color_gray">
+  <h4>'<a href="https://yaga.tistory.com/category/IT">IT</a> &gt; <a href="https://yaga.tistory.com/category/IT/DBMS">DBMS</a>' 카테고리의 다른 글</h4>
+  <table>
+    <tbody><tr>
+      <th><a href="https://yaga.tistory.com/604">[Oracle] ORDER BY 시 조건 처리</a>&nbsp;&nbsp;<span>(56)</span></th>
+      <td>2023.09.24</td>
+    </tr>
+    <tr>
+      <th><a href="https://yaga.tistory.com/578">[Oracle] 가장 마지막 row 조회(feat. partition by)</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2023.08.07</td>
+    </tr>
+    <tr>
+      <th><a href="https://yaga.tistory.com/538">[Oracle] 해당월말일 ~ 익월 말일까지 조회</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2023.05.30</td>
+    </tr>
+    <tr>
+      <th><a href="https://yaga.tistory.com/527">[Oracle] 재귀 복사</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2023.05.07</td>
+    </tr>
+    <tr>
+      <th><a href="https://yaga.tistory.com/518">[Oracle] 달력 만들기</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2023.04.01</td>
+    </tr>
+  </tbody></table>
+</div>
+
+<!-- PostListinCategory - END -->
+
+                  </div>
+
+                  <!-- article-footer -->
+                  <div class="article-footer">
+
+                    
+                      <!-- article-tag -->
+                      <div class="article-tag">
+                        <h3 class="title-footer">Tag</h3>
+                        <div class="box-tag"><a href="https://yaga.tistory.com/tag/mongo.exe" rel="tag">mongo.exe</a>, <a href="https://yaga.tistory.com/tag/mongodb" rel="tag">mongodb</a>, <a href="https://yaga.tistory.com/tag/mongosh" rel="tag">mongosh</a>, <a href="https://yaga.tistory.com/tag/NoSQL" rel="tag">NoSQL</a>, <a href="https://yaga.tistory.com/tag/%EB%AA%BD%EA%B3%A0db" rel="tag">몽고db</a></div>
+                      </div>
+                      <!-- // area_tag -->
+                    
+
+                    <div class="article-page">
+                      <h3 class="title-footer">'IT/DBMS'의 다른글</h3>
+                      <ul>
+                        <li>
+                          
+                            <a href="https://yaga.tistory.com/538"><span>이전글</span><strong>[Oracle] 해당월말일 ~ 익월 말일까지 조회</strong></a>
+                          
+                        </li>
+                        <li><span>현재글</span><strong>[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우...</strong></li>
+                        <li>
+                          
+                            <a href="https://yaga.tistory.com/578"><span>다음글</span><strong>[Oracle] 가장 마지막 row 조회(feat. partition by)</strong></a>
+                          
+                        </li>
+                      </ul>
+                    </div>
+
+                    
+                      <!-- article-related -->
+                      <div class="article-related">
+                        <h3 class="title-footer">관련글</h3>
+                        <ul class="list-related">
+                          
+                            <li class="item-related">
+                              <a href="https://yaga.tistory.com/604?category=1062287" class="link-related">
+                                <span class="thumnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIdEEm%2FbtsvbCiGNHy%2FrhkpnoCsX0q3LGNyZghMG0%2Fimg.png&#39;)"></span>
+                                <div class="box_content">
+                                  <strong>[Oracle] ORDER BY 시 조건 처리</strong>
+                                  <span class="date">2023.09.24</span>
+                                </div>
+                              </a>
+                            </li>
+                          
+                            <li class="item-related">
+                              <a href="https://yaga.tistory.com/578?category=1062287" class="link-related">
+                                <span class="thumnail" style="background-image:url(&#39;&#39;)"></span>
+                                <div class="box_content">
+                                  <strong>[Oracle] 가장 마지막 row 조회(feat. partition by)</strong>
+                                  <span class="date">2023.08.07</span>
+                                </div>
+                              </a>
+                            </li>
+                          
+                            <li class="item-related">
+                              <a href="https://yaga.tistory.com/538?category=1062287" class="link-related">
+                                <span class="thumnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQYPwG%2Fbtsh2Fyaoio%2FxhpUu8bQJGRa3CY7UvHfek%2Fimg.png&#39;)"></span>
+                                <div class="box_content">
+                                  <strong>[Oracle] 해당월말일 ~ 익월 말일까지 조회</strong>
+                                  <span class="date">2023.05.30</span>
+                                </div>
+                              </a>
+                            </li>
+                          
+                            <li class="item-related">
+                              <a href="https://yaga.tistory.com/527?category=1062287" class="link-related">
+                                <span class="thumnail" style="background-image:url(&#39;&#39;)"></span>
+                                <div class="box_content">
+                                  <strong>[Oracle] 재귀 복사</strong>
+                                  <span class="date">2023.05.07</span>
+                                </div>
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </div>
+                      <!-- // article-related -->
+                    
+
+                    <!-- article-reply -->
+                    <div class="article-reply">
+
+                      <div class="box-total">
+                        <a href="https://yaga.tistory.com/557#rp" onclick="">댓글 <span><span id="commentCount557_0">0</span></span></a>
+                      </div>
+
+                      <div data-tistory-react-app="Namecard"><div class="tt_box_namecard"><div class="tt_cont"><a href="https://yaga.tistory.com/" class="tt_tit_cont">머털&amp;보약의 기록</a><a href="https://yaga.tistory.com/" class="tt_desc">개발하는 머털과 궁금한 게 많은 보약의 기록 BLOG★</a><button type="button" class="tt_btn_subscribe"><span class="tt_txt_g">구독하기</span><span class="tt_img_area_reply tt_ico_cross"></span></button></div><a href="https://yaga.tistory.com/" class="tt_wrap_thumb"><span class="tt_thumb_g" style="background-image: url(&quot;https://img1.daumcdn.net/thumb/S56x56/?scode=mtistory2&amp;fname=https%3A%2F%2Ftistory1.daumcdn.net%2Ftistory%2F5031969%2Fattach%2Ffbdd551407a244fbbe13d5033eb06f4f&quot;);"></span></a></div></div><div id="entry557Comment">
+                        <!-- area-reply -->
+                        <div class="area-reply">
+                          
+                            <ul class="list-reply">
+                                          
+
+            
+                            </ul>
+                          
+                        </div>
+                        <!-- // area-reply -->
+
+                        <form method="post" action="https://yaga.tistory.com/comment/add/557" onsubmit="return false" style="margin: 0">
+    
+              <!-- reply_write -->
+              
+                <div class="area-write">
+                  
+                    
+                      <div class="box-account">
+                        <input type="text" name="name" value="" title="이름" placeholder="이름">
+                        <input type="password" name="password" value="" title="비밀번호" maxlength="12" placeholder="비밀번호">
+                      </div>
+                    
+                  
+                  <div class="box-textarea">
+                    <label for="comment" class="screen_out">댓글</label>
+                    <textarea id="comment" name="comment" placeholder="내용을 입력해주세요."></textarea>
+                  </div>
+
+                  <div class="box-write">
+                    <label class="xe-label">
+                      <input type="checkbox" name="secret" id="secret">
+                      <span class="xe-input-helper"></span>
+                      <span class="xe-label-text">비밀글</span>
+                    </label>
+                    <button type="button" class="btn_register" onclick="addComment(this, 557); return false;">등록</button>
+                  </div>
+
+                </div>
+              </form>
+              <!-- // reply_write -->
+            
+
+                      </div>
+<script type="text/javascript">loadedComments[557]=true;
+findFragmentAndHighlight(557);</script>
+
+
+                    </div>
+                    <!-- // article-reply -->
+
+                  </div>
+                  <!-- // article-footer -->
+
+                
+              
+                    
+                
+              <!-- // s_article_rep -->
+
+              <!-- s_article_protected / 개별 보호글 페이지 -->
+              
+              <!-- // s_article_protected -->
+
+              <!-- s_page_rep -->
+              
+              <!-- // s_page_rep -->
+
+              <!-- s_notice_rep / 개별 공지사항 페이지 -->
+              
+
+              <!-- // s_notice_rep -->
+
+              <!-- s_tag / 개별 태그 페이지-->
+              
+              <!-- // s_tag -->
+
+              <!-- s_local / 개별 위치로그 페이지 -->
+              
+              <!-- // s_local -->
+
+              <!-- s_guest  / 개별 방명록 페이지 -->
+              
+              <!-- // s_guest -->
+
+              <!-- s_paging -->
+              
+              <!-- // s_paging -->
+
+            </div>
+            <!-- area-view -->
+
+            <!-- s_cover_group / 커버 리스트 -->
+            
+            <!-- // s_cover_group -->
+
+          </div>
+          <!-- // area-main -->
+
+          <!-- aside -->
+          <aside class="area-aside" style="height: auto !important;">
+            <!-- sidebar 01 -->
+                        <div class="revenue_unit_wrap">
+  <div class="revenue_unit_item adsense responsive">
+    <div class="revenue_unit_info">반응형</div>
+    <script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/f(6).txt" async="async"></script>
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-host="ca-host-pub-9691043933427338" data-ad-client="ca-pub-6944215562275641" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_4_host" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/ads(3).html" data-google-container-id="a!5" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CL2i2_nRuoUDFR0BewcdKDkO9Q" data-load-complete="true"></iframe></div></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+                <!-- 프로필 -->
+                <div class="box-profile " style="background-image:url(&#39;&#39;);">
+                  <div class="inner-box">
+                    <img src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/fbdd551407a244fbbe13d5033eb06f4f" class="img-profile" alt="프로필사진">
+                    <p class="text-profile">개발하는 머털과 궁금한 게 많은 보약의 기록 BLOG★</p>
+                    <!-- <button type="button" class="button-subscription">구독하기</button> -->
+                    <div class="box-sns">
+                      
+                      
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+              
+
+            <!-- sidebar 02 -->
+            
+                <!-- 공지사항 -->
+                
+                  <div class="box-notice">
+                    <h3 class="title-sidebar">공지사항</h3>
+                    <ul class="list-sidebar">
+                      
+                        <li><a href="https://yaga.tistory.com/notice/681" class="link-sidebar">IT 관련 설치 및 기타 서비스 외주 가능합니다.</a></li>
+                      
+                    </ul>
+                  </div>
+                
+              
+                  <!-- 카테고리 메뉴 -->
+                  <div class="box-category box-category-2depth">
+                    <nav>
+                      <ul class="tt_category"><li class=""><a href="https://yaga.tistory.com/category" class="link_tit"> 분류 전체보기 <span class="c_cnt">(680)</span> <img alt="N" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/new_ico_1.gif" style="vertical-align:middle;padding-left:2px;"></a>
+  <ul class="category_list"><li class=""><a href="https://yaga.tistory.com/category/IT" class="link_item"> IT <span class="c_cnt">(360)</span> <img alt="N" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/new_ico_1.gif" style="vertical-align:middle;padding-left:2px;"></a>
+  <ul class="sub_category_list"><li class=""><a href="https://yaga.tistory.com/category/IT/development" class="link_sub_item"> development <span class="c_cnt">(220)</span> <img alt="N" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/new_ico_1.gif" style="vertical-align:middle;padding-left:2px;"></a></li>
+<li class=""><a href="https://yaga.tistory.com/category/IT/DBMS" class="link_sub_item"> DBMS <span class="c_cnt">(58)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/IT/DevOps" class="link_sub_item"> DevOps <span class="c_cnt">(26)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/IT/HTML%26CSS" class="link_sub_item"> HTML&amp;CSS <span class="c_cnt">(37)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/IT/ETC" class="link_sub_item"> ETC <span class="c_cnt">(19)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%9D%BC%EC%83%81%EB%8B%A4%EB%B0%98%EC%82%AC" class="link_item"> 일상다반사 <span class="c_cnt">(71)</span> <img alt="N" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/new_ico_1.gif" style="vertical-align:middle;padding-left:2px;"></a>
+  <ul class="sub_category_list"><li class=""><a href="https://yaga.tistory.com/category/%EC%9D%BC%EC%83%81%EB%8B%A4%EB%B0%98%EC%82%AC/%EA%B2%BD%EC%A0%9C%28%EC%9E%AC%ED%85%8C%ED%81%AC%29" class="link_sub_item"> 경제(재테크) <span class="c_cnt">(25)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%9D%BC%EC%83%81%EB%8B%A4%EB%B0%98%EC%82%AC/%EC%95%8C%EC%93%B8%EC%8B%A0%EC%9E%A1" class="link_sub_item"> 알쓸신잡 <span class="c_cnt">(42)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%9D%BC%EC%83%81%EB%8B%A4%EB%B0%98%EC%82%AC/ETC" class="link_sub_item"> ETC <span class="c_cnt">(3)</span> <img alt="N" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/new_ico_1.gif" style="vertical-align:middle;padding-left:2px;"></a></li>
+</ul>
+</li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C%28%EC%84%B1%EC%9E%A5%29" class="link_item"> 자기계발(성장) <span class="c_cnt">(148)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="https://yaga.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C%28%EC%84%B1%EC%9E%A5%29/%EB%A7%88%EC%BC%80%ED%8C%85_%EA%B8%B0%ED%9A%8D" class="link_sub_item"> 마케팅_기획 <span class="c_cnt">(53)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C%28%EC%84%B1%EC%9E%A5%29/%EB%8F%85%EC%84%9C%EA%B8%B0%EB%A1%9D" class="link_sub_item"> 독서기록 <span class="c_cnt">(35)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C%28%EC%84%B1%EC%9E%A5%29/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C" class="link_sub_item"> 자기계발 <span class="c_cnt">(25)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C%28%EC%84%B1%EC%9E%A5%29/%EC%97%85%EB%AC%B4%26%EC%A7%81%EB%AC%B4" class="link_sub_item"> 업무&amp;직무 <span class="c_cnt">(34)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%A6%90%EA%B1%B0%EC%9A%B4%20Our%20life" class="link_item"> 즐거운 Our life <span class="c_cnt">(101)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="https://yaga.tistory.com/category/%EC%A6%90%EA%B1%B0%EC%9A%B4%20Our%20life/%EC%9D%8C%EC%95%85%28%EC%99%B8%EA%B5%AD%EC%96%B4%29" class="link_sub_item"> 음악(외국어) <span class="c_cnt">(24)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%A6%90%EA%B1%B0%EC%9A%B4%20Our%20life/%EC%97%AC%ED%96%89_%EA%B2%BD%ED%97%98" class="link_sub_item"> 여행_경험 <span class="c_cnt">(17)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%A6%90%EA%B1%B0%EC%9A%B4%20Our%20life/%EC%95%BC%EA%B0%80_%ED%92%8D%EA%B2%BD" class="link_sub_item"> 야가_풍경 <span class="c_cnt">(5)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%A6%90%EA%B1%B0%EC%9A%B4%20Our%20life/%EB%8F%85%EB%B0%B1_%EC%83%9D%EA%B0%81%EC%A0%95%EB%A6%AC" class="link_sub_item"> 독백_생각정리 <span class="c_cnt">(46)</span> </a></li>
+<li class=""><a href="https://yaga.tistory.com/category/%EC%A6%90%EA%B1%B0%EC%9A%B4%20Our%20life/%EC%A3%BC%EC%A0%80%EB%A6%AC%20%EC%A3%BC%EC%A0%80%EB%A6%AC" class="link_sub_item"> 주저리 주저리 <span class="c_cnt">(9)</span> </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </nav>
+                  </div>
+              
+                <!-- 태그 -->
+                <div class="box-tag">
+                  <h3 class="title-sidebar">Tag</h3>
+                  <div class="box_tag">
+                    
+                      <a href="https://yaga.tistory.com/tag/vue.js" class="cloud3">vue.js,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/Java" class="cloud3">Java,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/%EC%8A%A4%ED%94%84%EB%A7%81" class="cloud3">스프링,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/Oracle" class="cloud2">Oracle,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/html" class="cloud3">html,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/%EC%98%A4%EB%9D%BC%ED%81%B4%20%EA%B3%B5%EB%B6%80" class="cloud4">오라클 공부,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/%EC%98%A4%EB%9D%BC%ED%81%B4%20dbms" class="cloud3">오라클 dbms,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/sql%20oracle" class="cloud3">sql oracle,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/mybatis" class="cloud3">mybatis,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/%EC%98%A4%EB%9D%BC%ED%81%B4%20%EA%B8%B0%EC%B4%88" class="cloud3">오라클 기초,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/spring%20Batch" class="cloud3">spring Batch,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/%EB%A6%AC%EB%88%85%EC%8A%A4" class="cloud4">리눅스,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/Batch" class="cloud3">Batch,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/SpringBoot" class="cloud2">SpringBoot,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/springframework" class="cloud3">springframework,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/spring" class="cloud1">spring,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/%EC%98%A4%EB%9D%BC%ED%81%B4%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" class="cloud3">오라클 데이터베이스,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/oracle%20%EA%B3%B5%EB%B6%80" class="cloud3">oracle 공부,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/javascript" class="cloud3">javascript,</a>
+                    
+                      <a href="https://yaga.tistory.com/tag/%EC%98%A4%EB%9D%BC%ED%81%B4%20db" class="cloud3">오라클 db,</a>
+                    
+                  </div>
+                </div>
+              
+                <!-- 최근글과 인기글-->
+                <div class="box-recent">
+                  <h3 class="title-sidebar blind">최근글과 인기글</h3>
+                  <ul class="tab-recent">
+                    <li class="tab-button recent_button on"><a class="tab-button" href="https://yaga.tistory.com/557#" onclick="return false;">최근글</a></li>
+                    <li class="tab-button sidebar_button"><a class="tab-button" href="https://yaga.tistory.com/557#" onclick="return false;">인기글</a></li>
+                  </ul>
+                  <ul class="list-recent">
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/704" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvcKg3%2FbtsGw6ZCo6T%2FtNYsXqMOMmvmUZLcEgX281%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[애드센스] 광고 게재가 현재 제한적입니다.</strong>
+                            <span>2024.04.11 16:59</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/703" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcYnYWj%2FbtsGwhfXyOX%2Fycbqlm5z6R8V9QXoxQltL1%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[Oracle] 비밀번호 만기 해제</strong>
+                            <span>2024.04.11 08:04</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/702" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcuZElw%2FbtsGrUrxSIk%2FFb2FIVkL4ttiCIfeRrfKk0%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[Git] git reflog 예시</strong>
+                            <span>2024.04.08 14:27</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/701" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FOxZa2%2FbtsGd06ZozG%2FYEAkeBJ4HFvd3wMD9OCBzk%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[mybatis] parameter 값 동시 전달</strong>
+                            <span>2024.03.31 14:50</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/700" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbFJyDb%2FbtsGdSVtYQZ%2FY1JMkkTEUzknD5zD3lkz40%2Fimg.jpg&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[오늘의 한 줄] 소비는 현재를...</strong>
+                            <span>2024.03.31 09:45</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                  </ul>
+
+                  <ul class="list-recent list-tab" style="display: none">
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/286" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F1zw6q%2FbtrRtzYeuzt%2FJ0keqoiY2ZxvCpccbDDsMk%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[일반]공공기관 - 신원진술서 작성 방법</strong>
+                            <span>2022.11.18 07:13</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/293" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLXOCL%2FbtrRsIn7rUT%2FA0miNJrEYJQwZP4o0XCbQ1%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[IDE]dbeaver 한글 깨짐 조치</strong>
+                            <span>2022.11.18 07:36</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/442" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fkxkiw%2FbtrSa7mDarG%2FnkAKaAfRjSKv00EICRMPkk%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[Oracle] oracle 쿼리 로그 보기</strong>
+                            <span>2022.11.28 07:07</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/512" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcdQD9t%2FbtrXN54Nl33%2FxGxikBaXuCCG3FFl8oAfZ1%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[java] PKIX path building failed 해결방법(HTTPS 통신 에러)</strong>
+                            <span>2023.02.01 21:15</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/334" class="link-recent">
+                          
+                            <p class="thumbnail" style="background-image:url(&#39;https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FmMidd%2FbtrRJOUcg6r%2FxbVuzSK8bgo00pKt6O5Zk1%2Fimg.png&#39;)"></p>
+                          
+                          <div class="box-recent">
+                            <strong>[IT] SW사업 대가산정 기능(FP)점수 산정방식(EI, EO, EQ, ILF, EIF)</strong>
+                            <span>2022.11.21 06:51</span>
+                          </div>
+                        </a>
+                      </li>
+                    
+                  </ul>
+                </div>
+              
+                <!-- 최근댓글 -->
+                <div class="box-reply">
+                  <h3 class="title-sidebar">최근댓글</h3>
+                  <ul class="list-sidebar">
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/704#comment24839297" class="link-sidebar">
+                          <strong>나랑 함꼐해줘서 고맙다요 행복한 하루가 내일 이이어졌으면합니다.! 다음에 뵈요</strong>
+                          <p>  제로니모!</p>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/704#comment24838688" class="link-sidebar">
+                          <strong>유용한 글 잘 보고 가요</strong>
+                          <p>  상손의법칙</p>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/704#comment24837265" class="link-sidebar">
+                          <strong>좋은 정보 얻어가요~ 또 올게요!</strong>
+                          <p>  오아란</p>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/703#comment24837262" class="link-sidebar">
+                          <strong>글 잘 읽고 갑니다.</strong>
+                          <p>  상손의법칙</p>
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://yaga.tistory.com/703#comment24834736" class="link-sidebar">
+                          <strong>좋은 글 감사합니다.</strong>
+                          <p>  ITSHOWROOM</p>
+                        </a>
+                      </li>
+                    
+                  </ul>
+                </div>
+              
+                <!-- 글 보관함 -->
+                <div class="box-archive">
+                  <h3 class="title-sidebar">Archives</h3>
+                  <ul class="list-sidebar">
+                    
+                      <li><a href="https://yaga.tistory.com/archive/202404" class="link-sidebar">2024/04</a></li>
+                    
+                      <li><a href="https://yaga.tistory.com/archive/202403" class="link-sidebar">2024/03</a></li>
+                    
+                      <li><a href="https://yaga.tistory.com/archive/202402" class="link-sidebar">2024/02</a></li>
+                    
+                      <li><a href="https://yaga.tistory.com/archive/202401" class="link-sidebar">2024/01</a></li>
+                    
+                      <li><a href="https://yaga.tistory.com/archive/202312" class="link-sidebar">2023/12</a></li>
+                    
+                  </ul>
+                </div>
+              
+                <!-- 달력 모듈-->
+                <div class="box-calendar">
+                  <h3 class="title-sidebar"><span class="blind">Calendar</span></h3>
+                  <div class="inner-calendar"><table class="tt-calendar" cellpadding="0" cellspacing="1" style="width: 100%; table-layout: fixed">
+  <caption class="cal_month"><a href="https://yaga.tistory.com/archive/202403" title="1개월 앞의 달력을 보여줍니다."></a> &nbsp; <a href="https://yaga.tistory.com/archive/202404" title="현재 달의 달력을 보여줍니다.">2024. 04</a> &nbsp; <a href="https://yaga.tistory.com/archive/202405" title="1개월 뒤의 달력을 보여줍니다."></a></caption>
+  <thead>
+    <tr>
+      <th class="cal_week2">일</th>
+      <th class="cal_week1">월</th>
+      <th class="cal_week1">화</th>
+      <th class="cal_week1">수</th>
+      <th class="cal_week1">목</th>
+      <th class="cal_week1">금</th>
+      <th class="cal_week1">토</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cal_week cal_current_week">
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day cal_day3">1</td>
+      <td class="cal_day cal_day3">2</td>
+      <td class="cal_day cal_day3">3</td>
+      <td class="cal_day cal_day3">4</td>
+      <td class="cal_day cal_day3">5</td>
+      <td class="cal_day cal_day3">6</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">7</td>
+      <td class="cal_day cal_day3"><a href="https://yaga.tistory.com/archive/20240408" class="cal_click">8</a></td>
+      <td class="cal_day cal_day3">9</td>
+      <td class="cal_day cal_day3">10</td>
+      <td class="cal_day cal_day3"><a href="https://yaga.tistory.com/archive/20240411" class="cal_click">11</a></td>
+      <td class="cal_day cal_day4">12</td>
+      <td class="cal_day cal_day3">13</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">14</td>
+      <td class="cal_day cal_day3">15</td>
+      <td class="cal_day cal_day3">16</td>
+      <td class="cal_day cal_day3">17</td>
+      <td class="cal_day cal_day3">18</td>
+      <td class="cal_day cal_day3">19</td>
+      <td class="cal_day cal_day3">20</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">21</td>
+      <td class="cal_day cal_day3">22</td>
+      <td class="cal_day cal_day3">23</td>
+      <td class="cal_day cal_day3">24</td>
+      <td class="cal_day cal_day3">25</td>
+      <td class="cal_day cal_day3">26</td>
+      <td class="cal_day cal_day3">27</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">28</td>
+      <td class="cal_day cal_day3">29</td>
+      <td class="cal_day cal_day3">30</td>
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day1 cal_day2"> </td>
+    </tr>
+  </tbody>
+</table></div>
+                </div>
+              
+                <!-- 방문자수 -->
+                <div class="box-visit">
+                  <h3 class="title-sidebar"><span class="blind">방문자수</span>Total</h3>
+                  <p class="text-total">118,775</p>
+                  <ul>
+                    <li class="item-visit">Today : 2</li>
+                    <li class="item-visit">Yesterday : 372</li>
+                  </ul>
+                </div>
+              
+
+            <!-- search-bar for MOBILE -->
+            <div class="util use-sidebar">
+              <div class="search">
+                <label for="searchInput" class="screen_out">블로그 내 검색</label>
+                <input id="searchInput" class="searchInput" type="text" name="search" value="" placeholder="검색내용을 입력하세요." onkeypress="if (event.keyCode == 13) { requestSearch(&#39;.util.use-sidebar .searchInput&#39;) }">
+              </div>
+            </div>
+
+          </aside>
+          <!-- // aside -->
+
+        </main>
+        <!-- // main -->
+      </div>
+      <!-- // container -->
+
+    
+
+    <!-- footer -->
+      <footer id="footer">
+
+        <div class="inner-footer">
+          <div class="box-policy">
+            
+            
+            
+          </div>
+          <div>
+            <p class="text-info">Copyright © Kakao Corp. All rights reserved.</p>
+            <address></address>
+          </div>
+
+          <div class="box-site">
+            <button type="button" data-toggle="xe-dropdown" aria-expanded="false">관련사이트</button>
+            <ul>
+              
+                <li class="on"><a href="https://www.instagram.com/yaga_garden/" target="_blank">인스타그램(야가)</a></li>
+              
+                <li class="on"><a href="https://devlsy.tistory.com/" target="_blank">꼬비의 알쓸신잡</a></li>
+              
+            </ul>
+          </div>
+        </div>
+
+      </footer>
+      <!-- // footer -->
+
+    </div>
+    <!-- // wrap -->
+  
+
+<!-- 플로팅 목차 -->
+<div class="floating-toc" style="display: none;"></div>
+
+  <!-- toc script start-->
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/jquery.toc.min.js.다운로드"></script>
+<script>
+    // 목차 생성
+    $(document).ready(function() {
+        var $toc = $("#toc");
+        $toc.toc({content: ".article-view", headings: "h2,h3,h4"});
+        
+        // 추가된 부분입니다
+        if($('.another_category').length > 0) {
+            $toc.find('li:last').remove();
+        }
+    });
+<!-- toc script end-->
+
+/* 떠 다니는 목차 */
+var safeFlag = true;
+function appendToc() {
+    var bookToc = $('.book-toc');
+    var floatingToc = $('.floating-toc');
+    if(bookToc.length > 0 && window.scrollY > bookToc.offset().top + bookToc.innerHeight()) {
+        if(floatingToc.height() === 0 && bookToc.innerHeight() > 70 && safeFlag) {
+            safeFlag = false;
+            floatingToc.css('display','block');
+            bookToc.css('width',bookToc.width()+'px'); //목차 박스 크기에 이상 있으면 제거하세요
+            bookToc.css('height',bookToc.height()+'px'); //목차 박스 크기에 이상 있으면 제거하세요
+            var tocTitle = $('<div id="toc-title"><div class="floating-icon"></div><p>목차 <span style="opacity:0.5;">펼치기</span></p></div>');
+            //목차 아이콘으로 표시
+            if(window.innerWidth < 768) {
+                tocTitle.find('p').css('display','none');
+            } else {
+                tocTitle.find('.floating-icon').css('display','none');
+            }
+            floatingToc.append(tocTitle);
+            bookToc.css('height', bookToc.height()); //목차 박스 크기에 이상 있으면 제거하세요
+            var tocBody = $('<div id="toc-body" style="display:none;"></div>').append(bookToc.find('#toc'));
+            floatingToc.append(tocBody);
+            
+            floatingToc.addClass('floating-toc-ani');
+            
+            floatingToc.css('padding', '0');
+            $('#toc-title').css('padding', '10px');
+            
+            floatingToc.css('top', "20px");
+            floatingToc.css('left', "20px");
+            floatingToc.css('position', "fixed");
+            
+            // 목차 클릭
+            function clickTitle() {
+                floatingToc.css('transition', '');
+                var title = $('#toc-title>p>span');
+                if(title.text() === "펼치기") {
+                    $('#toc-title').css('padding', '10px 0 0 0');
+                    floatingToc.css('padding', '0px 10px 10px 10px');
+                    floatingToc.css('opacity', '1.0');
+                    floatingToc.removeClass('floating-toc-ani');
+                }
+                setTimeout(function(){
+                    $('#toc-body').slideToggle(300,'linear', function() {
+                        if(title.text() === "접기") {
+                            floatingToc.css('transition', '');
+                            title.text("펼치기");
+                            floatingToc.css('padding', '0');
+                            $('#toc-title').css('padding', '10px');
+                            floatingToc.css('opacity', '0.5');
+                            floatingToc.addClass('floating-toc-ani');
+                            //목차 아이콘으로 표시
+                            if(window.innerWidth < 768) {
+                                tocTitle.find('p').css('display','none');
+                                tocTitle.find('.floating-icon').css('display','block');
+                            }
+                        } else {
+                            title.text("접기");
+                            //목차 아이콘으로 표시
+                            if(window.innerWidth < 768) {
+                                tocTitle.find('p').css('display','block');
+                                tocTitle.find('.floating-icon').css('display','none');
+                            }
+                        }
+                    });
+                },200);
+            }
+            $('#toc-title').on('click', function(){
+                clickTitle();
+            });
+            
+            //목차 항목 클릭
+            $('#toc-body').find('a').on('click', function(){
+                setTimeout(function(){
+                    checkPosition();
+                }, 200);
+            });
+            floatingToc.css('visibility', 'hidden'); // visibility 값을 hidden으로 주어 잠시 숨김
+            clickTitle();
+            setTimeout(function(){
+                if($('.article-view').offset().left < $('.floating-toc').width()+40) {
+                    clickTitle();
+                }
+            }, 500);
+            setTimeout(function(){
+                floatingToc.css('visibility', ''); // 완전히 접힌 후 다시 보이도록 함
+                safeFlag = true;
+            }, 1100);
+        } else {
+            checkPosition();
+        }
+    } else {
+        $('#toc-title').off('click');
+        bookToc.append(floatingToc.find('#toc'));
+        floatingToc.find('div').remove();
+        floatingToc.removeAttr('style');
+        floatingToc.css('display','none');
+        $('#toc').find('a').removeAttr('style');
+    }
+}
+
+function checkPosition() {
+    var titleList = $('.article-view').find('h2,h3,h4');
+    var scrollY = window.scrollY + 50;
+    if(titleList.length > 1) {
+        for(var i=0; i < titleList.length; i++) {
+            var tocList = $('#toc').find('a');
+            if(i < titleList.length-1) { //다른카테고리 글보기 플러그인을 사용하신다면 length-2로 바꿔주세요
+                if(titleList.eq(i).offset().top < scrollY && titleList.eq(i+1).offset().top > scrollY) {
+                    tocList.removeAttr('style');
+                    tocList.eq(i).css('font-weight','bold');
+                    break;
+                }
+            } else {
+                if(titleList.eq(i).offset().top < scrollY) {
+                    tocList.removeAttr('style');
+                    tocList.eq(i).css('font-weight','bold');
+                    break;
+                }
+            }
+        }
+    }
+}
+
+/* DOM 로드 직후 실행 */
+$(document).ready(function() {
+    /* 스크롤 이벤트리스너 */
+    $(window).on('scroll', function() {
+        appendToc();
+    });
+});
+</script>
+
+<!-- 클립보드에 복사 --> 
+<script>  
+$(document).ready(function () {
+	  //$('pre[id^="code"]').each(function (index, e) {
+    $('pre').each(function (index, e) {
+		let button = document.createElement('button');
+		button.innerText = "Copy";
+		button.className = 'copy-button';
+		button.style.cursor = 'pointer';
+		button.setAttribute('data-clipboard-text', e.innerText);
+		button.addEventListener('mouseleave', function(event) {
+			event.currentTarget.setAttribute('class', 'copy-button');
+			event.currentTarget.removeAttribute('copy-message');
+		});
+		e.appendChild(button);
+	});
+ 
+	var clipboard = new ClipboardJS('.copy-button');
+	clipboard.on('success', function (e) {
+  		e.clearSelection();
+		e.trigger.setAttribute('class', 'copy-button copy-message');
+		e.trigger.setAttribute('copy-message', '복사완료!');
+	});
+});
+</script>
+
+<div class="#menubar menu_toolbar ">
+  <h2 class="screen_out">티스토리툴바</h2>
+<div class="btn_tool"><button class="btn_menu_toolbar btn_subscription  #subscribe" data-blog-id="5031969" data-url="https://yaga.tistory.com" data-device="web_pc"><strong class="txt_tool_id">머털&amp;보약의 기록</strong><em class="txt_state">구독하기</em><span class="img_common_tistory ico_check_type1"></span></button></div></div>
+<div class="#menubar menu_toolbar "></div>
+<div class="layer_tooltip">
+  <div class="inner_layer_tooltip">
+    <p class="desc_g"></p>
+  </div>
+</div>
+<iframe id="editEntry" style="position:absolute;width:1px;height:1px;left:-100px;top:-100px" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/api.html"></iframe>
+
+                <!-- DragSearchHandler - START -->
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/search_dragselection.min.js.다운로드"></script>
+
+<!-- DragSearchHandler - END -->
+
+<!-- RainbowLink - START -->
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/script(1).js.다운로드"></script>
+
+<!-- RainbowLink - END -->
+
+        <!-- SyntaxHighlight - START -->
+        <link href="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/atom-one-dark-reasonable.min.css" rel="stylesheet"><script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/highlight.min.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/delphi.min.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/php.min.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/python.min.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/r.min.js.다운로드" defer=""></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/ruby.min.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/scala.min.js.다운로드" defer=""></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/shell.min.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/sql.min.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/swift.min.js.다운로드" defer=""></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/typescript.min.js.다운로드" defer=""></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/vbnet.min.js.다운로드" defer=""></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+        <!-- SyntaxHighlight - END -->
+
+                
+                <script type="text/javascript">(function($) {
+    $(document).ready(function() {
+        lightbox.options.fadeDuration = 200;
+        lightbox.options.resizeDuration = 200;
+        lightbox.options.wrapAround = false;
+        lightbox.options.albumLabel = "%1 / %2";
+    })
+})(tjQuery);</script>
+<div style="margin:0; padding:0; border:none; background:none; float:none; clear:none; z-index:0"></div>
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/common(1).js.다운로드"></script>
+<script type="text/javascript">window.roosevelt_params_queue = window.roosevelt_params_queue || [{channel_id: 'dk', channel_label: '{tistory}'}]</script>
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/roosevelt_dk_bt.js.다운로드" async="async"></script>
+<script type="text/javascript" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/menubar.min.js.다운로드"></script>
+
+                
+                <script>window.tiara = {"svcDomain":"user.tistory.com","section":"글뷰","trackPage":"글뷰_보기","page":"글뷰","key":"5031969-557","customProps":{"userId":"0","blogId":"5031969","entryId":"557","role":"guest","trackPage":"글뷰_보기","filterTarget":false},"entry":{"entryId":"557","categoryName":"IT/DBMS","categoryId":"1062287","author":"4826867","image":"kage@dcdKAk/btsnZy0Y40B/SH5EYoNU9xR3GdluxCN9K0","plink":"/557","tags":["mongo.exe","mongodb","mongosh","NoSQL","몽고db"]},"kakaoAppKey":"3e6ddd834b023f24221217e370daed18","appUserId":"null"}</script>
+<script type="module" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/index.js.다운로드"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/polyfills-legacy.min.js.다운로드" nomodule="true" defer="true"></script>
+<script src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/index-legacy.js.다운로드" nomodule="true" defer="true"></script>
+
+                
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="><div class="lb-nav"><a class="lb-prev" href="https://yaga.tistory.com/557"></a><a class="lb-next" href="https://yaga.tistory.com/557"></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/ads(4).html" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="./[MongoDB] 몽고DB 6.0.x 버전 mongo 찾지 못하는 경우..._files/aframe.html" width="0" height="0" style="display: none;"></iframe></body></html>

@@ -28,6 +28,15 @@ app.set('views', 'views');
 app.use(express.urlencoded({ extended: true }));
 app.use(session({secret: 'notagoodsecret'}));
 
+//특정 라우트의 경우 사용자 로그인 여부를 확인하는 작업이 필요하므로 해당 미들웨어를 설정
+const requireLogin = (req,res,next) => {
+    if(!req.session.user_id){
+        return res.redirect('/login');
+    }
+    //로그인상태라면
+    next();
+}
+
 app.get('/', (req, res) => {
     res.send("THIS IS THE HOME PAGE");
 })
@@ -85,11 +94,13 @@ app.post('/logout', (req,res) => {
     res.redirect('/login');
 })
 
-app.get('/secret', (req, res) => {
-    if(!req.session.user_id){
-        return res.redirect('/login');
-    }
+app.get('/secret', requireLogin, (req, res) => {
+    
     res.render('secret');
+})
+
+app.get('/topsecret', requireLogin, (req,res) => {
+    res.send("TOP SECRET");
 })
 
 app.listen(3000, () => {
