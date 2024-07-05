@@ -1,3 +1,4 @@
+package SpartaCoding.CodeKata.JAVA;
 import java.util.*;
 
 class Solution {
