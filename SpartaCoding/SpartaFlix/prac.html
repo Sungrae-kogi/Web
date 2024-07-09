@@ -10,12 +10,11 @@
         let fruits = ['사과','배','감','귤','수박'];
         $('#q1').empty();
 
-        fruits.forEach(element => {
-            
+        fruits.forEach(a => {
+            let temp = `<p>${a}</p>`;
+            $('#q1').append(temp);
         });
 
-        let temp_html = `<p>${a}</p>`;
-        $('#q1').append(temp_html);
     }
 </script>
 
