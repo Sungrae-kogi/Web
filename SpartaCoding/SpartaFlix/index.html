@@ -42,12 +42,12 @@
             padding: 20px;
         }
 
-        .form-floating > input {
+        .form-floating>input {
             background-color: transparent;
             color: white;
         }
 
-        .form-floating > label {
+        .form-floating>label {
             color: white;
         }
 
@@ -55,17 +55,52 @@
             background-color: transparent;
             color: white;
         }
-        
-        .mypostingbox > button {
+
+        .mypostingbox>button {
             width: 100%;
         }
     </style>
-    <script>
+    <script type="module">
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+        // Firebase 구성 정보 설정
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDlGiqAV5lwkdReztnElBHJz3d4QFaPCBw",
+            authDomain: "sparta-e192e.firebaseapp.com",
+            projectId: "sparta-e192e",
+            storageBucket: "sparta-e192e.appspot.com",
+            messagingSenderId: "45882253098",
+            appId: "1:45882253098:web:6e3a5d81389b145c898853",
+            measurementId: "G-045H2X7J1V"
+        };
+
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+
+
+
+        $(document).ready(function () {
+            let url = 'http://spartacodingclub.shop/sparta_api/weather/seoul';
+            fetch(url).then(res => res.json()).then(data => {
+                let temp = data['temp'];
+                $('#temperature').text(temp);
+            })
+        })
+
         function openclose() {
             $('#postingbox').toggle();
         }
 
-        function makeCard(){
+        function makeCard() {
             let image = $('#image').val();
             let title = $('#title').val();
             let comment = $('#comment').val();
@@ -112,6 +147,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">찜한 목록</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">현재 기온 : <span id="temperature"></span></a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
