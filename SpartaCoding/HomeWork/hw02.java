@@ -5,7 +5,7 @@ public class hw02 {
         Scanner sc = new Scanner(System.in);
 
         List<String> recipeList = new ArrayList<>();
-        Set<String> recipeSet = new HashSet<>();
+        Set<String> recipeSet = new LinkedHashSet<>();
         Map<Integer, String> recipeMap = new HashMap<>();
 
         System.out.print("저장할 자료구조 명 입력 : ");
