@@ -1,59 +1,12 @@
 import java.util.Scanner;
 
-class Calculator {
-
-    // 포함관계
-    private AddOperation addOperation;
-    private SubstractOperation substractOperation;
-    private MultiplyOperation multiplyOperation;
-    private DivideOperation divideOperation;
-
-    // 생성자에서 연산 클래스들도 같이 생성
-    // 멤버변수같은거를 줄 필요가없다, main에서 우선 계산기 객체를 만들고 그다음에 계산을 시켜야하니까
-    // 계산기 객체를 만들면 -> 자동으로 내부 계산 클래스들이 생성.
-    public Calculator() {
-        this.addOperation = new AddOperation();
-        this.substractOperation = new SubstractOperation();
-        this.multiplyOperation = new MultiplyOperation();
-        this.divideOperation = new DivideOperation();
-    }
-
-    public double calculate(String operator, int firstNumber, int secondNumber) {
-        // if, switch를 이용해서 전달받은 operator에 맞는 연산을 수행하고 결과를 리턴.
-        double result;
-
-        switch (operator) {
-            case "+":
-                result = addOperation.operate(firstNumber, secondNumber);
-                break;
-            case "-":
-                result = substractOperation.operate(firstNumber, secondNumber);
-                break;
-            case "/":
-                result = divideOperation.operate(firstNumber, secondNumber);
-                break;
-            case "*":
-                result = multiplyOperation.operate(firstNumber, secondNumber);
-                break;
-            // % 나머지 연산자는 제외했으니 그대로
-            case "%":
-                result = firstNumber % secondNumber;
-                break;
-            default:
-                System.out.println("잘못된 입력입니다.");
-                return 0.0;
-        }
-
-        return result;
-    }
-}
-
 // 연산클래스들은 Calculator와 포함관계여야함, Calculator 내부에서 인자를 전달받고 결과를 리턴.
 // 더하기
-class AddOperation {
+class AddOperation extends AbstractOperation {
     public AddOperation() {
     }
 
+    @Override
     public double operate(int firstNumber, int secondNumber) {
         double result = firstNumber + secondNumber;
 
@@ -62,10 +15,11 @@ class AddOperation {
 }
 
 // 빼기
-class SubstractOperation {
+class SubstractOperation extends AbstractOperation {
     public SubstractOperation() {
     }
 
+    @Override
     public double operate(int firstNumber, int secondNumber) {
         double result = firstNumber - secondNumber;
 
@@ -74,10 +28,11 @@ class SubstractOperation {
 }
 
 // 곱하기
-class MultiplyOperation {
+class MultiplyOperation extends AbstractOperation {
     public MultiplyOperation() {
     }
 
+    @Override
     public double operate(int firstNumber, int secondNumber) {
         double result = firstNumber * secondNumber;
 
@@ -86,12 +41,27 @@ class MultiplyOperation {
 }
 
 // 나누기
-class DivideOperation {
+class DivideOperation extends AbstractOperation {
     public DivideOperation() {
     }
 
+    @Override
     public double operate(int firstNumber, int secondNumber) {
         double result = firstNumber / secondNumber;
+
+        return result;
+    }
+}
+
+// 나머지 step4에 나머지 연산에 대한 설명이 부족한 상태.
+class RemainderOperation extends AbstractOperation {
+    public RemainderOperation() {
+
+    }
+
+    @Override
+    public double operate(int firstNumber, int secondNumber) {
+        double result = firstNumber % secondNumber;
 
         return result;
     }
@@ -100,9 +70,10 @@ class DivideOperation {
 public class Hw03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();
+
+        Calculator calculator;
         String operator;
-        int a,b;
+        int a, b;
 
         while (true) {
             System.out.println("계산기 프로그램 입니다.");
@@ -110,9 +81,13 @@ public class Hw03 {
             System.out.print("연산자를 입력하세요 : ");
             operator = sc.next();
 
-            if (operator.equals("q")){
+            if (operator.equals("q")) {
                 System.out.println("계산기 프로그램을 종료합니다.");
                 break;
+            } else if (operator.equals("%")) {
+                calculator = new Calculator();
+            } else {
+                calculator = new Calculator(operator);
             }
 
             System.out.print("피연산자 두 개의 수를 입력하세요 : ");
@@ -131,7 +106,7 @@ public class Hw03 {
                 System.out.println("------나머지 연산 결과------");
             else
                 System.out.println("------잘못된 연산자 입력------");
-            System.out.println(calculator.calculate(operator, a, b));
+            System.out.println(calculator.calculate(a, b));
             System.out.println();
         }
 
