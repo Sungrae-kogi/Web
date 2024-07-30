@@ -70,12 +70,14 @@ class RemainderOperation extends AbstractOperation {
 public class Hw03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //계산 루프 종료 여부 판별 변수
+        boolean calculateEnded = false;
 
         Calculator calculator;
         String operator;
         int a, b;
 
-        while (true) {
+        while (!calculateEnded) {
             System.out.println("계산기 프로그램 입니다.");
             System.out.println("+ - * / % 각 연산에 맞는 연산자를 입력해주세요, 종료시에는 q를 입력해주세요");
             System.out.print("연산자를 입력하세요 : ");
@@ -83,7 +85,8 @@ public class Hw03 {
 
             if (operator.equals("q")) {
                 System.out.println("계산기 프로그램을 종료합니다.");
-                break;
+                calculateEnded = true;
+                continue;
             } else if (operator.equals("%")) {
                 calculator = new Calculator();
             } else {
@@ -108,7 +111,10 @@ public class Hw03 {
                 System.out.println("------잘못된 연산자 입력------");
             System.out.println(calculator.calculate(a, b));
             System.out.println();
-        }
 
+
+        }
+        
+        sc.close();
     }
 }
