@@ -2,7 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/SpartaCoding/Project/nbc-team21" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpartaCoding/Exercise/spring-prepare" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpartaCoding/Project/2NE1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/SpartaCoding/Project/nbc-team5" vcs="Git" />
   </component>
 </project>
